@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Noah Kamara">
+  <title>Cover Template · Bootstrap</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/"> -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/testflight.css') }}" rel="stylesheet">
+  <link href="cover.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <h3 class="masthead-brand">ABJC</h3>
+    </header>
+
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">{{ strings.callToAction.title }}</h1>
+      <form class="lead" style="display:table; margin:auto;">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+      </form>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>© 2020 Copyright: <a href="noahkamara.github.io">Noah Kamara</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

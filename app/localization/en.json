@@ -1,0 +1,12 @@
+{
+    "footer": {
+        "imprint": "imprint"
+    },
+    "beta": {
+        "callToAction": {
+            "title": "Join the ABJC Beta",
+            "descr": "Help the development by testing beta versions of ABJC",
+            "button": "Join Now"
+        }
+    }
+}
