@@ -3,10 +3,20 @@
         "imprint": "imprint"
     },
     "beta": {
-        "callToAction": {
+        "index": {
             "title": "Join the ABJC Beta",
-            "descr": "Help the development by testing beta versions of ABJC",
+            "subtitle": "Help the development by testing beta versions of ABJC",
             "button": "Join Now"
+        },
+        "join": {
+            "title": "Join the ABJC Beta",
+            "subtitle": "Fill out the form below to sign up for beta testing",
+            "button": "Sign Up",
+            "error": "Email is already subscribed"
+        },
+        "thanks": {
+            "title": "Thank You <name>",
+            "subtitle": "Check your email inbox and verify your adress now"
         }
     }
 }

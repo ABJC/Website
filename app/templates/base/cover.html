@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Noah Kamara">
+    <title>Cover Template · Bootstrap</title>
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Styles for Page -->
+    <link href="{{ url_for('static', filename='css/testflight.css') }}" rel="stylesheet">
+
+
+  </head>
+    <body class="text-center">
+      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+    <h3 class="masthead-brand">ABJC</h3>
+  </header>
+
+  <main role="main" class="cover">
+    
+    <h1 class="cover-heading">{% block title %}{% endblock %}</h1>
+    <p class="lead">{% block subtitle %}{% endblock %} </p>
+    
+    {% block content %}{% endblock %}
+
+    <p class="lead"></p>
+        {% if not isCustomButton %}
+            <a href="{% block button_href %}{% endblock %}" class="btn btn-lg btn-primary">{% block button %}{% endblock %}</a>
+        {% else %}
+        {% block button_custom %}{% endblock %}
+        {% endif %}
+    </p>
+    
+    
+    
+    
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>© 2020 Copyright: <a href="noahkamara.github.io">Noah Kamara</a></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

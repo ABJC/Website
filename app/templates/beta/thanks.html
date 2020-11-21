@@ -1,0 +1,12 @@
+{% extends "base/cover.html" %}
+{% set isCustomButton = True %}
+
+{% block title %} 
+  {{ strings.title|replace("<name>", name)}}
+{% endblock %}
+
+{% block subtitle %}
+  {{ strings.subtitle}}
+{% endblock %}
+
+
