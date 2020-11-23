@@ -18,6 +18,11 @@ app = Flask(__name__, instance_relative_config=True)
 # Apply the blueprints to the app
 from app.blueprints import home, roadmap, changelog, beta
 
+app.register_blueprint(home.bp,     url_prefix="/")
+app.register_blueprint(roadmap.bp,  url_prefix="/roadmap")
+app.register_blueprint(changelog.bp,url_prefix="/changelog")
+app.register_blueprint(beta.bp,     url_prefix="/beta")
+
 app.register_blueprint(home.bp,     url_prefix="/<locale>/")
 app.register_blueprint(roadmap.bp,  url_prefix="/<locale>/roadmap")
 app.register_blueprint(changelog.bp,url_prefix="/<locale>/changelog")
