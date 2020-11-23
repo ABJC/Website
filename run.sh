@@ -1,3 +1,14 @@
-export FLASK_APP=app.app.py
-export FLASK_ENV=development
-python3 -m flask run
+#!/usr/bin/env bash
+
+
+source config.sh
+
+. .venv/bin/activate
+
+for var in "${VARS[@]}" ; do
+    KEY="${var%%:*}"
+    VALUE="${var##*:}"
+    export $KEY=$VALUE
+done
+
+flask run --host 0.0.0.0 --port 80

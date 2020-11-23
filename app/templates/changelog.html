@@ -1,0 +1,38 @@
+{% extends "base/base.html" %}
+{% set title = "Changelog" %}
+
+{% block css %}
+<link href="{{ url_for('static', filename='css/changelog.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block fullwidth %}
+{% for v in versions %}
+<div class="container" id="{{v.version}}">
+    <div class="row">
+        <h3>{{ v.version.replace("v","") }} {{ v.date | time_format }} {% if v.tagline != None %} -
+            {{v.tagline}}{% endif %}</h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h4>New Features</h4>
+            {% for feature in v.changelog.features %}
+                <div> 
+                    <h6>{{ feature.title }}</h6>
+                    <p>{{ feature.descr }}</p>
+                    <img src="https://picsum.photos/320/180" width=100%/>
+                    {% if feature.img %}{% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <h4>Bug Fixes & Improvements</h4>
+            <ul>
+                {% for change in v.changelog.changes %}
+                    <li>{{ change }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

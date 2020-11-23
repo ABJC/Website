@@ -3,29 +3,40 @@
 {% extends "base/cover.html" %}
 {% set isCustomButton = True %}
 
+{% block pagetitle %} 
+  {{ strings.beta.join.title }}
+{% endblock %}
+
 {% block title %} 
-  {{ strings.title }}
+  {{ strings.beta.join.title }}
 {% endblock %}
 
 {% block subtitle %}
-  {{ strings.subtitle }}
+  {{ strings.beta.join.subtitle }}
 {% endblock %}
 
 {% block content %}
 <form method="POST" class="lead" style="display:table; margin:auto;">
   <div class="form-row">
     <div class="form-group col-md-6">
-      <input name="fname" type="text" class="form-control" placeholder="First name">
+      <input name="fname" type="text" class="form-control" placeholder="{{ strings.beta.join.form.fname }}">
     </div>
     <div class="form-group col-md-6">
-      <input name="lname" type="text" class="form-control" placeholder="Last name">
+      <input id="inputlname" name="lname" type="text" class="form-control" placeholder="{{ strings.beta.join.form.lname }}">
     </div>
   </div>
   <div class="form-group">
-    <!-- <label for="email">Email address</label> -->
-    <input name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter Email">
-    <small id="inputEmail" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input required name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{ strings.beta.join.form.email }}">
+    <small id="inputEmail" class="form-text text-muted">{{ strings.beta.join.form.email_info }}</small>
   </div>
-  <button type="submit" class="btn btn-lg btn-primary">{{ strings.button }}</button>
+  <div class="form-group">
+    <div id="formcheck" class="form-check">
+      <input checked type="checkbox" class="form-check-input" name="newsletter" id="newsletter">
+      <label class="form-check-label" for="newsletter">{{ strings.beta.join.form.newsletter }}</label>
+    </div>
+    <small id="formcheck" class="form-text text-muted">{{ strings.beta.join.form.newsletter_info }}</small>
+  </div>
+  
+  <button type="submit" class="btn btn-lg btn-primary">{{ strings.beta.join.form.submit }}</button>
 </form>
 {% endblock %}

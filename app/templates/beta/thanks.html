@@ -1,12 +1,16 @@
 {% extends "base/cover.html" %}
 {% set isCustomButton = True %}
 
+{% block pagetitle %} 
+  {{ strings.beta.thanks.title }}
+{% endblock %}
+
 {% block title %} 
-  {{ strings.title|replace("<name>", name)}}
+  {{ strings.beta.thanks.title|replace("<name>", name)}}
 {% endblock %}
 
 {% block subtitle %}
-  {{ strings.subtitle}}
+  {{ strings.beta.thanks.subtitle}}
 {% endblock %}
 
 

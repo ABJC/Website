@@ -6,13 +6,10 @@ import os
 
 class Mailchimp:
     def __init__(self):
-        is_prod = os.environ.get('IS_HEROKU', False)
-        
-        api_key = None
-        if is_prod:
-            api_key = os.environ.get('MAILCHIMP:APIKEY', False)
-        elif api_key == None:
-            raise Exception("No API Key Specified and Environment is Debug")
+        api_key = os.environ.get('MAILCHIMP_APIKEY', None)
+            
+        if api_key == None:
+            raise Exception("No API Key Specified")
 
 
         self.client = MailchimpMarketing.Client()
@@ -23,11 +20,11 @@ class Mailchimp:
 
         # print(json.dumps(response, indent=2))
 
-    def addSubscriber(self, fname: str, lname: str, mail: str) -> bool:        
+    def addSubscriber(self, email: str, fname: str, lname: str) -> bool:        
         list_id = "f14ab28484"
 
         member_info = {
-            "email_address": mail,
+            "email_address": email,
             "status": "pending",
             "merge_fields": {
                 "FNAME": fname,

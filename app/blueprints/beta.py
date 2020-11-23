@@ -5,35 +5,38 @@ from flask import abort
 
 from app import utils
 from app.mailchimp import Mailchimp
-from app.blueprints.beta.forms import *
+from app.connect import ConnectAPI
 
 bp = Blueprint("beta", __name__, url_prefix="/")
 
 
 @bp.route("/")
 def index(**options):
-    locale, strings = utils.localization(options.get('locale', 'en'), 'beta.index')
+    locale, strings = utils.localization(options.get('locale', 'en'))
     return render_template("beta/index.html", locale=locale, strings=strings)
 
 
 @bp.route("/join", methods=('GET', 'POST'))
 def join(**options):
-    locale, strings = utils.localization(options.get('locale', 'en'), 'beta.join')
+    locale, strings = utils.localization(options.get('locale', 'en'))
 
     if request.method == 'POST':
         fname = request.form.get('fname')
         lname = request.form.get('lname')
         mail = request.form.get('email')
-        success = Mailchimp().addSubscriber(fname, lname, mail)
+        newsletter = request.form.get('newsletter')
+        print(request.form.keys())
+        # success_newsletter = Mailchimp().addSubscriber(email, fname, lname)
+        # success_testflight = ConnectAPI().invite_tester(email, fname, lname)
         if not success:
             # flash(strings['error'])
             print("ERROR")
-        return redirect(url_for('beta.thanks', name=fname, locale=locale))
+        return redirect(url_for('beta.thanks', name=fname if fname != None else "", locale=locale))
 
     return render_template("beta/join.html", strings=strings)
 
 
 @bp.route("/thanks/<name>")
 def thanks(name: str, **options):
-    locale, strings = utils.localization(options.get('locale', 'en'), 'beta.thanks')
+    locale, strings = utils.localization(options.get('locale', 'en'))
     return render_template("beta/thanks.html", locale=locale, strings=strings, name=name)

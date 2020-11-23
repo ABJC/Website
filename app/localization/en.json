@@ -1,6 +1,18 @@
 {
-    "footer": {
-        "imprint": "imprint"
+    "base": {
+        "footer": {
+            "imprint": "imprint"
+        }
+    },
+    "errors": {
+        "404": {
+            "title": "Page Not Found",
+            "descr": "Hello Description"
+        },
+        "500": {
+            "title": "Internal Server Error",
+            "descr": "Hello Description"
+        }
     },
     "beta": {
         "index": {
@@ -11,8 +23,16 @@
         "join": {
             "title": "Join the ABJC Beta",
             "subtitle": "Fill out the form below to sign up for beta testing",
-            "button": "Sign Up",
-            "error": "Email is already subscribed"
+            "error": "Email is already subscribed",
+            "form": {
+                "fname": "First Name",
+                "lname": "Last Name",
+                "email": "Email",
+                "email_info": "Your Email is required to send you a TestFlight invitation link.",
+                "newsletter": "Newsletter",
+                "newsletter_info": "Occasional emails with info on new releases, polls and survey (I don't spam)",
+                "submit": "Sign Up"
+            }
         },
         "thanks": {
             "title": "Thank You <name>",
