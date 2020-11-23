@@ -1,0 +1,632 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Roadmap</title><style>
+    /* webkit printing magic: print all background colors */
+    html {
+        -webkit-print-color-adjust: exact;
+    }
+    * {
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen {
+        body {
+            margin: 2em auto;
+            max-width: 900px;
+            color: rgb(55, 53, 47);
+        }
+    }
+    
+    body {
+        line-height: 1.5;
+        white-space: pre-wrap;
+    }
+    
+    a,
+    a.visited {
+        color: inherit;
+        text-decoration: underline;
+    }
+    
+    .pdf-relative-link-path {
+        font-size: 80%;
+        color: #444;
+    }
+    
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0.75em;
+    }
+    
+    h1 {
+        font-size: 1.875rem;
+        margin-top: 1.875rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        margin-top: 1.25rem;
+    }
+    
+    .source {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 1.5em;
+        word-break: break-all;
+    }
+    
+    .callout {
+        border-radius: 3px;
+        padding: 1rem;
+    }
+    
+    figure {
+        margin: 1.25em 0;
+        page-break-inside: avoid;
+    }
+    
+    figcaption {
+        opacity: 0.5;
+        font-size: 85%;
+        margin-top: 0.5em;
+    }
+    
+    mark {
+        background-color: transparent;
+    }
+    
+    .indented {
+        padding-left: 1.5em;
+    }
+    
+    hr {
+        background: transparent;
+        display: block;
+        width: 100%;
+        height: 1px;
+        visibility: visible;
+        border: none;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+    }
+    
+    img {
+        max-width: 100%;
+    }
+    
+    @media only print {
+        img {
+            max-height: 100vh;
+            object-fit: contain;
+        }
+    }
+    
+    @page {
+        margin: 1in;
+    }
+    
+    .collection-content {
+        font-size: 0.875rem;
+    }
+    
+    .column-list {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .column {
+        padding: 0 1em;
+    }
+    
+    .column:first-child {
+        padding-left: 0;
+    }
+    
+    .column:last-child {
+        padding-right: 0;
+    }
+    
+    .table_of_contents-item {
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.3;
+        padding: 0.125rem;
+    }
+    
+    .table_of_contents-indent-1 {
+        margin-left: 1.5rem;
+    }
+    
+    .table_of_contents-indent-2 {
+        margin-left: 3rem;
+    }
+    
+    .table_of_contents-indent-3 {
+        margin-left: 4.5rem;
+    }
+    
+    .table_of_contents-link {
+        text-decoration: none;
+        opacity: 0.7;
+        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgba(55, 53, 47, 0.09);
+        border-collapse: collapse;
+    }
+    
+    table {
+        border-left: none;
+        border-right: none;
+    }
+    
+    th,
+    td {
+        font-weight: normal;
+        padding: 0.25em 0.5em;
+        line-height: 1.5;
+        min-height: 1.5em;
+        text-align: left;
+    }
+    
+    th {
+        color: rgba(55, 53, 47, 0.6);
+    }
+    
+    ol,
+    ul {
+        margin: 0;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+    
+    li > ol:first-child,
+    li > ul:first-child {
+        margin-block-start: 0.6em;
+    }
+    
+    ul > li {
+        list-style: disc;
+    }
+    
+    ul.to-do-list {
+        text-indent: -1.7em;
+    }
+    
+    ul.to-do-list > li {
+        list-style: none;
+    }
+    
+    .to-do-children-checked {
+        text-decoration: line-through;
+        opacity: 0.375;
+    }
+    
+    ul.toggle > li {
+        list-style: none;
+    }
+    
+    ul {
+        padding-inline-start: 1.7em;
+    }
+    
+    ul > li {
+        padding-left: 0.1em;
+    }
+    
+    ol {
+        padding-inline-start: 1.6em;
+    }
+    
+    ol > li {
+        padding-left: 0.2em;
+    }
+    
+    .mono ol {
+        padding-inline-start: 2em;
+    }
+    
+    .mono ol > li {
+        text-indent: -0.4em;
+    }
+    
+    .toggle {
+        padding-inline-start: 0em;
+        list-style-type: none;
+    }
+    
+    /* Indent toggle children */
+    .toggle > li > details {
+        padding-left: 1.7em;
+    }
+    
+    .toggle > li > details > summary {
+        margin-left: -1.1em;
+    }
+    
+    .selected-value {
+        display: inline-block;
+        padding: 0 0.5em;
+        background: rgba(206, 205, 202, 0.5);
+        border-radius: 3px;
+        margin-right: 0.5em;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+    }
+    
+    .collection-title {
+        display: inline-block;
+        margin-right: 1em;
+    }
+    
+    time {
+        opacity: 0.5;
+    }
+    
+    .icon {
+        display: inline-block;
+        max-width: 1.2em;
+        max-height: 1.2em;
+        text-decoration: none;
+        vertical-align: text-bottom;
+        margin-right: 0.5em;
+    }
+    
+    img.icon {
+        border-radius: 3px;
+    }
+    
+    .user-icon {
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    
+    .user-icon-inner {
+        font-size: 0.8em;
+    }
+    
+    .text-icon {
+        border: 1px solid #000;
+        text-align: center;
+    }
+    
+    .page-cover-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 30vh;
+    }
+    
+    .page-header-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .page-header-icon-with-cover {
+        margin-top: -0.72em;
+        margin-left: 0.07em;
+    }
+    
+    .page-header-icon img {
+        border-radius: 3px;
+    }
+    
+    .link-to-page {
+        margin: 1em 0;
+        padding: 0;
+        border: none;
+        font-weight: 500;
+    }
+    
+    p > .user {
+        opacity: 0.5;
+    }
+    
+    td > .user,
+    td > time {
+        white-space: nowrap;
+    }
+    
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 0.6em;
+        vertical-align: middle;
+    }
+    
+    p {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .image {
+        border: none;
+        margin: 1.5em 0;
+        padding: 0;
+        border-radius: 0;
+        text-align: center;
+    }
+    
+    .code,
+    code {
+        background: rgba(135, 131, 120, 0.15);
+        border-radius: 3px;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-size: 85%;
+        tab-size: 2;
+    }
+    
+    code {
+        color: #eb5757;
+    }
+    
+    .code {
+        padding: 1.5em 1em;
+    }
+    
+    .code-wrap {
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+    
+    .code > code {
+        background: none;
+        padding: 0;
+        font-size: 100%;
+        color: inherit;
+    }
+    
+    blockquote {
+        font-size: 1.25em;
+        margin: 1em 0;
+        padding-left: 1em;
+        border-left: 3px solid rgb(55, 53, 47);
+    }
+    
+    .bookmark {
+        text-decoration: none;
+        max-height: 8em;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .bookmark-title {
+        font-size: 0.85em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 1.75em;
+        white-space: nowrap;
+    }
+    
+    .bookmark-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .bookmark-info {
+        flex: 4 1 180px;
+        padding: 12px 14px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .bookmark-image {
+        width: 33%;
+        flex: 1 1 180px;
+        display: block;
+        position: relative;
+        object-fit: cover;
+        border-radius: 1px;
+    }
+    
+    .bookmark-description {
+        color: rgba(55, 53, 47, 0.6);
+        font-size: 0.75em;
+        overflow: hidden;
+        max-height: 4.5em;
+        word-break: break-word;
+    }
+    
+    .bookmark-href {
+        font-size: 0.75em;
+        margin-top: 0.25em;
+    }
+    
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+    .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+    .serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+    .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+    .pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+    
+    .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+    
+    .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+    
+    .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+    
+    .highlight-default {
+    }
+    .highlight-gray {
+        color: rgb(155,154,151);
+    }
+    .highlight-brown {
+        color: rgb(100,71,58);
+    }
+    .highlight-orange {
+        color: rgb(217,115,13);
+    }
+    .highlight-yellow {
+        color: rgb(223,171,1);
+    }
+    .highlight-teal {
+        color: rgb(15,123,108);
+    }
+    .highlight-blue {
+        color: rgb(11,110,153);
+    }
+    .highlight-purple {
+        color: rgb(105,64,165);
+    }
+    .highlight-pink {
+        color: rgb(173,26,114);
+    }
+    .highlight-red {
+        color: rgb(224,62,62);
+    }
+    .highlight-gray_background {
+        background: rgb(235,236,237);
+    }
+    .highlight-brown_background {
+        background: rgb(233,229,227);
+    }
+    .highlight-orange_background {
+        background: rgb(250,235,221);
+    }
+    .highlight-yellow_background {
+        background: rgb(251,243,219);
+    }
+    .highlight-teal_background {
+        background: rgb(221,237,234);
+    }
+    .highlight-blue_background {
+        background: rgb(221,235,241);
+    }
+    .highlight-purple_background {
+        background: rgb(234,228,242);
+    }
+    .highlight-pink_background {
+        background: rgb(244,223,235);
+    }
+    .highlight-red_background {
+        background: rgb(251,228,228);
+    }
+    .block-color-default {
+        color: inherit;
+        fill: inherit;
+    }
+    .block-color-gray {
+        color: rgba(55, 53, 47, 0.6);
+        fill: rgba(55, 53, 47, 0.6);
+    }
+    .block-color-brown {
+        color: rgb(100,71,58);
+        fill: rgb(100,71,58);
+    }
+    .block-color-orange {
+        color: rgb(217,115,13);
+        fill: rgb(217,115,13);
+    }
+    .block-color-yellow {
+        color: rgb(223,171,1);
+        fill: rgb(223,171,1);
+    }
+    .block-color-teal {
+        color: rgb(15,123,108);
+        fill: rgb(15,123,108);
+    }
+    .block-color-blue {
+        color: rgb(11,110,153);
+        fill: rgb(11,110,153);
+    }
+    .block-color-purple {
+        color: rgb(105,64,165);
+        fill: rgb(105,64,165);
+    }
+    .block-color-pink {
+        color: rgb(173,26,114);
+        fill: rgb(173,26,114);
+    }
+    .block-color-red {
+        color: rgb(224,62,62);
+        fill: rgb(224,62,62);
+    }
+    .block-color-gray_background {
+        background: rgb(235,236,237);
+    }
+    .block-color-brown_background {
+        background: rgb(233,229,227);
+    }
+    .block-color-orange_background {
+        background: rgb(250,235,221);
+    }
+    .block-color-yellow_background {
+        background: rgb(251,243,219);
+    }
+    .block-color-teal_background {
+        background: rgb(221,237,234);
+    }
+    .block-color-blue_background {
+        background: rgb(221,235,241);
+    }
+    .block-color-purple_background {
+        background: rgb(234,228,242);
+    }
+    .block-color-pink_background {
+        background: rgb(244,223,235);
+    }
+    .block-color-red_background {
+        background: rgb(251,228,228);
+    }
+    .select-value-color-default { background-color: rgba(206,205,202,0.5); }
+    .select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+    .select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+    .select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+    .select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+    .select-value-color-green { background-color: rgba(0,135,107,0.2); }
+    .select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+    .select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+    .select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+    .select-value-color-red { background-color: rgba(255,0,26,0.2); }
+    
+    .checkbox {
+        display: inline-flex;
+        vertical-align: text-bottom;
+        width: 16;
+        height: 16;
+        background-size: 16px;
+        margin-left: 2px;
+        margin-right: 5px;
+    }
+    
+    .checkbox-on {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+    
+    .checkbox-off {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+    }
+        
+    </style></head><body><article id="81c4dcf6-19ed-479c-81c1-c9730eedfb79" class="page sans"><header><img class="page-cover-image" src="Roadmap%2081c4dcf619ed479c81c1c9730eedfb79/8AC47E36-05D0-4526-9837-E65806817095.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🚗</span></div><h1 class="page-title">Roadmap</h1></header><div class="page-body"><h1 id="73864447-f626-4c28-8b31-12ad8e99cc73" class="">ABJC 1.0.0</h1><div id="15c72f90-9462-4636-9340-07ca5c82f320" class="column-list"><div id="dd91b3ee-40ea-49fc-b287-1585a82b84fa" style="width:50%" class="column"><h2 id="e523e8bf-fd1a-41ff-ac59-abfe1926b4ce" class="">🔄 Playback Continuation &amp; Sync</h2><p id="73a1775a-9c66-476f-bcef-a1c7d5b41798" class=""><strong>Playback Continuation</strong></p><p id="6229f2e9-09e4-4b05-8ef5-41427c7f4fd4" class="">Playback will now continue were you left off last time. Easily resume movies you&#x27;ve started on other clients</p><p id="8ceab6e9-e38e-4ea2-8f05-d91c48609d58" class=""><strong>Playback Syncing</strong></p><p id="3f1119d7-2fd7-4d15-b187-0c03b0f478e5" class="">ABJC will now sync playback progress back to the server</p></div><div id="b7da19da-a497-4e94-a81a-a44cc116bb70" style="width:50%" class="column"><p id="119db063-8a1d-4748-b060-1164e2f59eda" class="">
+    </p></div></div><hr id="97697244-d85f-4350-b89d-a6e67b7f041e"/><h2 id="48cd433c-0199-4504-bb98-d4b8983553c7" class="">ABJC 1.1.0 - January 2021</h2><div id="81adbc99-9d2e-4f7b-8e52-6f4dbe609157" class="column-list"><div id="1c0936c9-25d2-4e0a-9abb-fdf819e5629f" style="width:50%" class="column"><h2 id="abcace6a-2705-464c-b4bb-d2d8d3eb38c7" class="">🔑 Better User Authentication</h2><p id="f4757211-6e90-4fc4-8cdb-10d88add3735" class=""><strong>Public User Selection</strong></p><p id="abd90b12-c538-4a6e-927d-3f391384bcb8" class="">Select your account from the list of public accounts and only need a password to authenticate</p><p id="90336c1e-e1b4-4b90-b67e-9bb380b5a015" class=""><strong>Easy Password Login</strong></p><p id="04645c39-64c1-44eb-82d0-58ca675cdd2f" class="">Login with your &quot;easy-password&quot; (configurable in jellyfin)</p><p id="f96557a6-b376-4218-a6d0-0c1011ec3c3f" class="">
+    </p></div><div id="4e751085-0019-4ca5-9b42-24b79b633f6f" style="width:50%" class="column"><h2 id="73bebc73-6e60-4ba8-9268-6506e4d7538f" class="">⏯️ Playback Optimization</h2><p id="d79729c3-ad40-495b-a98e-933c5b5577fa" class=""><strong>Direct Playback</strong></p><p id="89599652-4a45-4255-baac-315f218bba47" class="">ABJC will now attempt to direct play your content instead of asking the server to transcode all content (if available)</p></div></div><hr id="8177fffb-0023-4daf-be20-dca62a0b3cd5"/><h2 id="e4f78a6c-63d8-4025-8d85-829ae20c0e2b" class="">ABJC 1.2.0 - February / March 2021</h2><div id="777ecc48-0208-4322-870c-e8e9a5a8d07e" class="column-list"><div id="f05455a0-e7c5-4d85-9312-6b8d6dc97124" style="width:50%" class="column"><h2 id="c9f8b916-cfce-4a63-97a2-bd799582e7d7" class="">📺 Live TV Support</h2><p id="65cf4de7-fef8-4c35-ae25-8d2ac00ef3c0" class=""><strong>Live TV Tab</strong></p><p id="e54ce437-7083-4d69-a5c2-3c4ada566ba8" class="">Browse Channels in the Live TV Tab</p><p id="bf62ef53-1cd7-4aca-81d8-f790e128b597" class=""><strong>Live Guides</strong></p><p id="dcaa7f77-04a6-4b31-9492-9763c2568433" class="">Information on current playing items</p><p id="86701c28-0987-48a2-b424-2c8d3bf1f8c4" class="">
+    </p><p id="2810ad97-4953-4670-aa0c-1cc559f7ec5f" class="">
+    </p><p id="118ddf9c-d693-467c-aadc-4c03cd57f8e8" class="">
+    </p></div><div id="e0ac2dfe-c498-4eb3-bf5d-6f0e2c996378" style="width:50%" class="column"><h2 id="0377671e-16ad-4622-9e16-6f6ef2a5c3d0" class="">Live TV Support</h2><p id="8561a259-e87c-4be6-a4ae-2563dc0fc7b4" class=""><strong>New Live TV Tab</strong></p><p id="3d63ed65-64d9-4a5e-b16c-aa52bea0282f" class="">Select a channel and watch it live</p></div></div></div></article></body></html>

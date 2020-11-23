@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}
+{% set title = "Home" %}
+
+
+    
+
+
+{% block css %}
+{% endblock %}
+
+{% block fullwidth %}
+    <div class="container align-items-center" style="text-align: center;">
+        <h1>{{ code }}</h1>
+        <h5>{{ strings.errors[code].title }}</h5>
+    </div>
+    
+{% endblock %}

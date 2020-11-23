@@ -1,71 +1,77 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Noah Kamara">
-    <title>Cover Template · Bootstrap</title>
 
-    <!-- FAVICONS -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='favicons/apple-icon-57x57.png')}}">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='favicons/apple-icon-60x60.png')}}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static', filename='favicons/apple-icon-72x72.png')}}">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='favicons/apple-icon-76x76.png')}}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static', filename='favicons/apple-icon-114x114.png')}}">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static', filename='favicons/apple-icon-120x120.png')}}">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='favicons/apple-icon-144x144.png')}}">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='favicons/apple-icon-152x152.png')}}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicons/apple-icon-180x180.png')}}">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{url_for('static', filename='favicons/android-icon-192x192.png')}}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicons/favicon-32x32.png')}}">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='favicons/favicon-96x96.png')}}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicons/favicon-16x16.png')}}">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Noah Kamara">
+  <title>{% block pagetitle %}{% endblock %} · ABJC</title>
 
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
-    <!-- Styles for Page -->
-    <link href="{{ url_for('static', filename='css/testflight.css') }}" rel="stylesheet">
+  <!-- FAVICONS -->
+  <link rel="apple-touch-icon" sizes="57x57" href="{{url_for('static', filename='favicons/apple-icon-57x57.png')}}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{url_for('static', filename='favicons/apple-icon-60x60.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{url_for('static', filename='favicons/apple-icon-72x72.png')}}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='favicons/apple-icon-76x76.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{url_for('static', filename='favicons/apple-icon-114x114.png')}}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{url_for('static', filename='favicons/apple-icon-120x120.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{url_for('static', filename='favicons/apple-icon-144x144.png')}}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{url_for('static', filename='favicons/apple-icon-152x152.png')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static', filename='favicons/apple-icon-180x180.png')}}">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="{{url_for('static', filename='favicons/android-icon-192x192.png')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static', filename='favicons/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{url_for('static', filename='favicons/favicon-96x96.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='favicons/favicon-16x16.png')}}">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
 
-  </head>
-    <body class="text-center">
-      <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-    <h3 class="masthead-brand">ABJC</h3>
-  </header>
+  <!-- Bootstrap core CSS -->
+  <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
-  <main role="main" class="cover">
-    
-    <h1 class="cover-heading">{% block title %}{% endblock %}</h1>
-    <p class="lead">{% block subtitle %}{% endblock %} </p>
-    
-    {% block content %}{% endblock %}
+  <!-- Styles for Page -->
+  <link href="{{ url_for('static', filename='css/testflight.css') }}" rel="stylesheet">
 
-    <p class="lead"></p>
-        {% if not isCustomButton %}
-            <a href="{% block button_href %}{% endblock %}" class="btn btn-lg btn-primary">{% block button %}{% endblock %}</a>
-        {% else %}
-        {% block button_custom %}{% endblock %}
-        {% endif %}
-    </p>
-    
-    
-    
-    
-  </main>
 
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p>© 2020 Copyright: <a href="noahkamara.github.io">Noah Kamara</a></p>
-    </div>
-  </footer>
-</div>
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <a href="{{ url_for('home.index', locale=locale) }}" class="masthead mb-auto">
+      <img src="{{ url_for('static', filename='logos/banner_dark.png')}}" height=50 class="masthead-brand" />
+    </a>
+
+
+    <main role="main" class="cover">
+
+      <h1 class="cover-heading">{% block title %}{% endblock %}</h1>
+      <p class="lead">{% block subtitle %}{% endblock %} </p>
+
+      {% block content %}{% endblock %}
+
+      <p class="lead"></p>
+      {% if not isCustomButton %}
+      <a href="{% block button_href %}{% endblock %}"
+        class="btn btn-lg btn-primary">{% block button %}{% endblock %}</a>
+      {% else %}
+      {% block button_custom %}{% endblock %}
+      {% endif %}
+      </p>
+
+
+
+
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>© 2020 Copyright: <a href="noahkamara.github.io">Noah Kamara</a></p>
+      </div>
+    </footer>
+  </div>
 </body>
+
 </html>
