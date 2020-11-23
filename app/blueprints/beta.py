@@ -23,14 +23,19 @@ def join(**options):
     if request.method == 'POST':
         fname = request.form.get('fname')
         lname = request.form.get('lname')
-        mail = request.form.get('email')
+        email = request.form.get('email')
         newsletter = request.form.get('newsletter')
-        print(request.form.keys())
-        # success_newsletter = Mailchimp().addSubscriber(email, fname, lname)
-        # success_testflight = ConnectAPI().invite_tester(email, fname, lname)
-        if not success:
+        success_newsletter = True
+        if newsletter:
+            success_newsletter = Mailchimp().addSubscriber(email, fname, lname)
+        
+        success_testflight = ConnectAPI().invite_tester(email, fname, lname)
+
+        if not (success_testflight or success_newsletter):
             # flash(strings['error'])
             print("ERROR")
+            # TODO
+
         return redirect(url_for('beta.thanks', name=fname if fname != None else "", locale=locale))
 
     return render_template("beta/join.html", strings=strings)

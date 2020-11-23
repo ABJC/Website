@@ -35,7 +35,7 @@ class Mailchimp:
         try:
             self.client.lists.add_list_member(list_id, member_info)
             return True
-        except:
+        except ApiClientError as e:
             return False
 
 # api = Mailchimp()
