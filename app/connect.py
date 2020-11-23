@@ -7,7 +7,9 @@ import os
 class ConnectAPI:
     def __init__(self):
         self.issuer = "aee29330-0d2a-4844-87ef-7ae92e10846a"
-        self.secret = os.environ.get('CONNECT_PRIVATEKEY', None)
+        s = os.environ.get("CONNECT_PRIVATEKEY", "")
+        key = bytes("-----BEGIN PRIVATE KEY-----\n" + s + "\n-----END PRIVATE KEY-----", encoding="utf-8")
+        self.secret = key
         self.kid = "BX7HTG9XK8"
         self.__token = None
         self.exp = datetime.now()
