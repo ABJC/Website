@@ -7,17 +7,15 @@
 
 {% block fullwidth %}
 {% for v in versions %}
-<div class="container" id="{{v.version}}">
-    <div class="row">
-        <h3>{{ v.version.replace("v","") }} {{ v.date | time_format }} {% if v.tagline != None %} -
-            {{v.tagline}}{% endif %}</h3>
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <h4>New Features</h4>
+<div class="version" id="{{v.version}}">
+    <h1>{{ v.version.replace("v","") }} {{ v.date | time_format }} {% if v.tagline != None %} - {{v.tagline}}{% endif %}</h1>
+    
+    <div class="row" style="width: 100%">
+        <div class="col-md-6 nopadding">
+            <h2>New Features</h2>
             {% for feature in v.changelog.features %}
                 <div> 
-                    <h6>{{ feature.title }}</h6>
+                    <h3>{{ feature.title }}</h3>
                     <p>{{ feature.descr }}</p>
                     <img src="https://picsum.photos/320/180" width=100%/>
                     {% if feature.img %}{% endif %}
@@ -25,7 +23,7 @@
             {% endfor %}
         </div>
         <div class="col">
-            <h4>Bug Fixes & Improvements</h4>
+            <h2>Bug Fixes & Improvements</h2>
             <ul>
                 {% for change in v.changelog.changes %}
                     <li>{{ change }}</li>
