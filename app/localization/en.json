@@ -38,5 +38,22 @@
             "title": "Thank You <name>",
             "subtitle": "Check your email inbox and verify your adress now"
         }
+    },
+    "newsletter": {
+        "index": {
+            "title": "Sign Up for the Newsletter",
+            "subtitle": "Keep up to date with development",
+            "error": "Email is already subscribed",
+            "form": {
+                "fname": "First Name",
+                "lname": "Last Name",
+                "email": "Email",
+                "submit": "Sign Up"
+            }
+        },
+        "thanks": {
+            "title": "Welcome <name>",
+            "subtitle": "Check your email inbox and verify your adress now"
+        }
     }
 }

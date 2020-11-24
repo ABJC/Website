@@ -1,0 +1,34 @@
+
+
+{% extends "base/cover.html" %}
+{% set isCustomButton = True %}
+
+{% block pagetitle %} 
+  {{ strings.newsletter.index.title }}
+{% endblock %}
+
+{% block title %} 
+  {{ strings.newsletter.index.title }}
+{% endblock %}
+
+{% block subtitle %}
+  {{ strings.newsletter.index.subtitle }}
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="lead" style="display:table; margin:auto;">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input name="fname" type="text" class="form-control" placeholder="{{ strings.newsletter.index.form.fname }}">
+    </div>
+    <div class="form-group col-md-6">
+      <input id="inputlname" name="lname" type="text" class="form-control" placeholder="{{ strings.newsletter.index.form.lname }}">
+    </div>
+  </div>
+  <div class="form-group">
+    <input required name="email" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="{{ strings.newsletter.index.form.email }}">
+  </div>
+  
+  <button type="submit" class="btn btn-lg btn-primary">{{ strings.newsletter.index.form.submit }}</button>
+</form>
+{% endblock %}

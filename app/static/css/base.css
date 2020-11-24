@@ -38,27 +38,14 @@
 
 /* NAVIGATION BAR */
 
-@media (min-width:992px) {
-    #mainNav {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        transition: padding-top .3s, padding-bottom .3s;
-    }
-    #mainNav .navbar-brand {
-        font-size: 1.75em;
-        transition: all .3s
-    }
-    #mainNav.navbar-shrink {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    #mainNav.navbar-shrink .navbar-brand {
-        font-size: 1.25em;
-        padding: 12px 0
-    }
+main {
+    padding-top: 5rem;
+    min-height: 100vh;
 }
 
-main {
-    padding-top: 120px;
-    min-height: 100vh;
+
+footer {
+    height: 60px; 
+    line-height: 60px; 
+    background-color: #f5f5f5;
 }
