@@ -36,7 +36,7 @@
         },
         "thanks": {
             "title": "Thank You <name>",
-            "subtitle": "Check your email inbox and verify your adress now"
+            "subtitle": "Check your email inbox and verify your address now"
         }
     },
     "newsletter": {
@@ -53,7 +53,7 @@
         },
         "thanks": {
             "title": "Welcome <name>",
-            "subtitle": "Check your email inbox and verify your adress now"
+            "subtitle": "Check your email inbox and verify your address now"
         }
     }
 }
