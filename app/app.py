@@ -30,6 +30,7 @@ app.register_blueprint(changelog.bp,url_prefix="/<locale>/changelog")
 app.register_blueprint(beta.bp,     url_prefix="/<locale>/beta")
 app.register_blueprint(newsletter.bp,     url_prefix="/<locale>/newsletter")
 
+app.register_blueprint(redirects.bp)
 app.add_url_rule("/", endpoint="home.index")
 app.register_error_handler(404, error_handler_404)
 
